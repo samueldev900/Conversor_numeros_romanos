@@ -13,8 +13,8 @@
         }
         elseif(isset($_POST['numeroRomano'])){
 
-            $stringRomano = $_POST['numeroRomano'];
-            $romanoInformado = $_POST['numeroRomano'];
+            $stringRomano = strtoupper($_POST['numeroRomano']);
+            $romanoInformado = strtoupper($_POST['numeroRomano']);
             $conversor = new Romanos($stringRomano);
             $resultado = $conversor->getResultadoStringToDecimal();
 

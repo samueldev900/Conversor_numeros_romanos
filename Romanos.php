@@ -32,7 +32,8 @@ class Romanos{
         }
         // Verifica se o valor é uma string
         elseif (is_string($valor) && !empty($valor)) {
-            $this->stringRomana = str_replace(' ', '', $valor);
+            $this->stringRomana = strtoupper($valor);
+            $this->stringRomana = str_replace(' ', '',$valor);
             $this->conversorRomanToDecimal();
         } 
     }
