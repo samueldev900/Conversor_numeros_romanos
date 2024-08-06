@@ -38,7 +38,6 @@ class Romanos{
         } 
     }
     
-
         /* 
             Condiciona as contagens para a conversão correta. Por exemplo, apenas as letras I, X, C e M podem ser impressas até 3 vezes. Já as letras V, L e D podem ser impressas apenas 1 vez.
         */
@@ -81,8 +80,6 @@ class Romanos{
           
     }
     
-
-    /*  Contas os Numeros para Gerar as Letras */
     private function conversorDecimalToRoman(){
 
         $n1 = $this->numero;
@@ -145,8 +142,6 @@ class Romanos{
         $this->converter();
     }
 
-
-
     private function conversorRomanToDecimal(){
 
         $string = $this->stringRomana;
@@ -167,11 +162,7 @@ class Romanos{
            "I" => 1,
         ];
 
-        //Divide as cada letra em um index de array
         $array = str_split($string);
-     /*    echo "<pre>";
-        print_r($array);
-        echo "</pre>"; */
 
         $valorAtual = 0;
 
@@ -185,15 +176,13 @@ class Romanos{
                     $resultado += $valorAtual;
     
                 }
-                // 100 > 1000 ?
+
                 elseif($valores[$letras] > $valorAtual){
-                    //valor atual = 500 - 100    
-                    // RESULTADO = 1100 + 400
+
                     $valorAtual =  $valores[$letras] - (2 * $valorAtual);
                     $resultado += $valorAtual;
                 }
-                // valor atual = 100
-                // resultado = 1000 + 100
+       
                 else{
                     $valorAtual = $valores[$letras];
                     $resultado +=$valorAtual;
@@ -204,12 +193,10 @@ class Romanos{
                 break;
             }
 
-
         }
         $this->resultadoStringToDecimal = $resultado;
     }
 
-    /* Armazena as Letras na Variável */
     private function gerarRomano() {
         $this->romano = '';
         $this->romano .= str_repeat("M", $this->countMil);
@@ -227,7 +214,6 @@ class Romanos{
         $this->romano .= str_repeat("I", $this->countUm);
         
     }
-
 
     /**
      * Get the value of romano
